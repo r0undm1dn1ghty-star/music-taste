@@ -8,7 +8,11 @@
 <style>
 :root{--bg:#0b0809;--ink:#f7f1f3;--pink:#ff6f9c;--pink-soft:#ffa3c3;--mut:rgba(247,241,243,.55)}
 *{margin:0;padding:0;box-sizing:border-box}
-body{background:var(--bg);color:var(--ink);font-family:"Onest",system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+body{background:var(--bg);color:var(--ink);font-family:"Onest",system-ui,sans-serif;-webkit-font-smoothing:antialiased;position:relative}
+body::before{content:"";position:fixed;inset:0;z-index:-2;background:url("covers/bg.jpg") center 30%/cover no-repeat;filter:brightness(.55) saturate(1.05)}
+body::after{content:"";position:fixed;inset:0;z-index:-1;background:
+  radial-gradient(120% 70% at 50% 20%,rgba(9,5,16,.35) 0%,rgba(9,5,16,.72) 60%,rgba(7,4,12,.94) 100%),
+  linear-gradient(180deg,rgba(7,4,12,.88) 0%,rgba(7,4,12,.62) 40%,rgba(7,4,12,.92) 100%)}
 .wrap{max-width:720px;margin:0 auto;padding:56px 20px 64px}
 .brand{display:flex;justify-content:space-between;font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--pink-soft);font-weight:600}
 .brand span:last-child{color:var(--mut)}
@@ -42,6 +46,22 @@ h1 em{font-style:normal;color:var(--pink)}
 .btn.ghost{background:transparent;color:var(--pink-soft)}
 .btn:hover{background:var(--pink-soft);border-color:var(--pink-soft);color:#12060c}
 .cta-note{margin-top:14px;font-size:13.5px;line-height:1.4;color:var(--mut)}
+.own{margin-top:56px;padding-top:40px;border-top:1px solid rgba(255,111,156,.22)}
+.own-h{font-family:"Unbounded";font-weight:800;font-size:clamp(26px,6vw,36px);letter-spacing:-.03em}
+.own-sub{margin-top:12px;font-size:15px;line-height:1.5;color:var(--mut);max-width:36em}
+.ownfields{margin-top:26px;display:flex;flex-direction:column;gap:2px}
+.ownrow{display:grid;grid-template-columns:1fr;gap:4px;padding:10px 0;border-bottom:1px solid rgba(255,255,255,.07)}
+.ownlab{font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--pink-soft);font-weight:600}
+.ownrow input{background:transparent;border:0;border-bottom:1px solid rgba(255,255,255,.14);color:var(--ink);
+  font-family:inherit;font-size:16px;padding:4px 0 6px;outline:none;width:100%}
+.ownrow input:focus{border-bottom-color:var(--pink)}
+.ownrow input::placeholder{color:rgba(247,241,243,.22)}
+.ownactions{display:flex;gap:12px;margin-top:24px;flex-wrap:wrap;align-items:center}
+.own-status{margin-top:14px;font-size:13.5px;color:var(--pink-soft);min-height:18px}
+#cv{display:none;width:100%;height:auto;margin-top:24px;outline:1px solid rgba(255,111,156,.3)}
+#cv.shown{display:block}
+#ownDownload{display:none}
+#ownDownload.shown{display:inline-block}
 @media (max-width:560px){.cv{width:72px;height:72px;flex-basis:72px}.a{font-size:15.5px}}
 </style></head>
 <body><div class="wrap">
@@ -251,7 +271,7 @@ h1 em{font-style:normal;color:var(--pink)}
       <a class="btn" href="https://t.me/p1nks1ght" target="_blank" rel="noopener">розовый взгляд — канал</a>
       <button class="btn ghost" id="share">поделиться</button>
     </div>
-    <p class="cta-note">пришлёшь список — соберу тебе такую же страницу со ссылками и обложками.</p>
+    <p class="cta-note">ниже — тот же список пустым. заполни и забери свою картинку.</p>
   </div>
 </div>
 <script>
@@ -260,5 +280,141 @@ document.getElementById('share').addEventListener('click', async () => {
   try { if (navigator.share) { await navigator.share(data); return; } } catch (e) {}
   try { await navigator.clipboard.writeText(location.href); document.getElementById('share').textContent = 'ссылка скопирована'; } catch (e) {}
 });
+</script>
+<script>
+(function () {
+  var PROMPTS = [
+    "любимый альбом", "лучший сюжетный альбом", "любимая обложка", "когда-нибудь послушаю",
+    "произвело личное влияние", "помогает в трудные дни", "нравится мне, никто не любит",
+    "все любят, мне не нравится", "недооценённый альбом", "переоценённый альбом", "не моё, но…",
+    "лучшие инструменталы", "лучший вокал", "простой, но классный", "лучший микстэйп",
+    "любимое неизданное", "большое разочарование", "большой сюрприз", "лучший саундтрек",
+    "самый необычный альбом", "любимая группа", "любимый артист", "лучший ЕР", "самый депрессивный"
+  ];
+
+  var box = document.getElementById("ownFields");
+  var saved = {};
+  try { saved = JSON.parse(localStorage.getItem("rv_taste_own") || "{}"); } catch (e) {}
+
+  PROMPTS.forEach(function (p, i) {
+    var row = document.createElement("div");
+    row.className = "ownrow";
+    var lab = document.createElement("span");
+    lab.className = "ownlab";
+    lab.textContent = p;
+    var inp = document.createElement("input");
+    inp.type = "text";
+    inp.maxLength = 46;
+    inp.placeholder = "—";
+    inp.value = saved[i] || "";
+    inp.addEventListener("input", function () {
+      saved[i] = inp.value;
+      try { localStorage.setItem("rv_taste_own", JSON.stringify(saved)); } catch (e) {}
+    });
+    row.appendChild(lab); row.appendChild(inp);
+    box.appendChild(row);
+  });
+
+  var cv = document.getElementById("cv");
+  var ctx = cv.getContext("2d");
+  var W = 1080, H = 1350;
+  cv.width = W; cv.height = H;
+
+  function wrap(text, maxWidth, font) {
+    ctx.font = font;
+    var words = String(text).split(" "), lines = [], cur = "";
+    for (var i = 0; i < words.length; i++) {
+      var t = cur ? cur + " " + words[i] : words[i];
+      if (ctx.measureText(t).width > maxWidth && cur) { lines.push(cur); cur = words[i]; }
+      else { cur = t; }
+    }
+    if (cur) lines.push(cur);
+    return lines;
+  }
+
+  var bgReady = false, bgImg = new Image();
+  bgImg.onload = function () { bgReady = true; };
+  bgImg.src = "covers/bg.jpg";
+
+  function draw() {
+    ctx.clearRect(0, 0, W, H);
+    ctx.fillStyle = "#0b0716";
+    ctx.fillRect(0, 0, W, H);
+    if (bgReady) {
+      var s = Math.max(W / bgImg.width, H / bgImg.height);
+      var w = bgImg.width * s, h = bgImg.height * s;
+      ctx.globalAlpha = 0.42;
+      ctx.drawImage(bgImg, (W - w) / 2, (H - h) / 2, w, h);
+      ctx.globalAlpha = 1;
+    }
+    var g = ctx.createLinearGradient(0, 0, 0, H);
+    g.addColorStop(0, "rgba(8,5,16,.86)");
+    g.addColorStop(0.45, "rgba(8,5,16,.55)");
+    g.addColorStop(1, "rgba(8,5,16,.94)");
+    ctx.fillStyle = g;
+    ctx.fillRect(0, 0, W, H);
+
+    ctx.fillStyle = "#ffa3c3";
+    ctx.font = "600 20px Onest, system-ui, sans-serif";
+    ctx.fillText("РОЗОВЫЙ ВЗГЛЯД · МОЙ МУЗЫКАЛЬНЫЙ ВКУС", 40, 74);
+
+    ctx.fillStyle = "#ff6f9c";
+    ctx.fillRect(40, 92, 84, 3);
+
+    var cell = 236, gap = 14, x0 = 40, y0 = 130;
+    for (var i = 0; i < 24; i++) {
+      var col = i % 4, row = Math.floor(i / 4);
+      var x = x0 + col * (cell + gap), y = y0 + row * (cell * 0.78 + gap);
+      ctx.fillStyle = "rgba(10,6,20,.72)";
+      ctx.fillRect(x, y, cell, cell * 0.78);
+      ctx.fillStyle = "rgba(255,111,156,.45)";
+      ctx.fillRect(x, y, 3, cell * 0.78);
+
+      ctx.fillStyle = "#ffa3c3";
+      ctx.font = "600 13px Onest, system-ui, sans-serif";
+      var pl = wrap(PROMPTS[i].toUpperCase(), cell - 26, "600 13px Onest, system-ui, sans-serif");
+      pl.slice(0, 2).forEach(function (line, k) {
+        ctx.fillText(line, x + 15, y + 26 + k * 16);
+      });
+
+      var val = (saved[i] || "").trim() || "—";
+      var isBlank = !(saved[i] || "").trim();
+      ctx.fillStyle = isBlank ? "rgba(247,241,243,.28)" : "#ffffff";
+      var f = "700 20px Onest, system-ui, sans-serif";
+      var al = wrap(val, cell - 30, f);
+      al.slice(0, 3).forEach(function (line, k) {
+        ctx.fillText(line, x + 15, y + 62 + k * 24);
+      });
+    }
+
+    ctx.fillStyle = "rgba(247,241,243,.45)";
+    ctx.font = "400 17px Onest, system-ui, sans-serif";
+    ctx.fillText("собери свой из этих же 24 пунктов", 40, H - 52);
+    ctx.fillStyle = "#ffa3c3";
+    ctx.font = "600 17px Onest, system-ui, sans-serif";
+    ctx.textAlign = "right";
+    ctx.fillText("r0undm1dn1ghty-star.github.io/music-taste", W - 40, H - 52);
+    ctx.textAlign = "left";
+  }
+
+  var st = document.getElementById("ownStatus");
+  var dl = document.getElementById("ownDownload");
+
+  document.getElementById("ownMake").addEventListener("click", async function () {
+    if (document.fonts && document.fonts.ready) { try { await document.fonts.ready; } catch (e) {} }
+    draw();
+    cv.classList.add("shown");
+    var filled = PROMPTS.filter(function (_, i) { return (saved[i] || "").trim(); }).length;
+    try {
+      dl.href = cv.toDataURL("image/png");
+      dl.classList.add("shown");
+      dl.setAttribute("download", "мой-музыкальный-вкус.png");
+    } catch (e) { st.textContent = "картинку не собрать в этом браузере"; }
+    st.textContent = filled + " из 24 заполнено — картинка ниже, сохраняй и шарь";
+  });
+
+  draw();
+})();
+
 </script>
 </body></html>
