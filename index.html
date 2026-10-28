@@ -266,13 +266,25 @@ h1 em{font-style:normal;color:var(--pink)}
   <div class="foot"><span><b>ни один пункт не согласован с предыдущим</b></span><span>слушать подряд — можно с любого места</span></div>
 
   <div class="cta">
-    <p class="cta-lead">это мой вкус. собери свой из этих же двадцати четырёх пунктов — и пришли, интересно, где мы расходимся.</p>
+    <p class="cta-lead">это мой вкус. собери свой из этих же двадцати четырёх пунктов — прямо здесь, за пару минут.</p>
     <div class="cta-row">
       <a class="btn" href="https://t.me/p1nks1ght" target="_blank" rel="noopener">розовый взгляд — канал</a>
       <button class="btn ghost" id="share">поделиться</button>
     </div>
     <p class="cta-note">ниже — тот же список пустым. заполни и забери свою картинку.</p>
   </div>
+
+  <section class="own" id="own">
+    <h2 class="own-h">собери свой</h2>
+    <p class="own-sub">двадцать четыре пункта. заполни те, что вспомнились, — остальные останутся пустыми. внизу соберётся картинка, её можно сохранить и отправить кому угодно.</p>
+    <div class="ownfields" id="ownFields"></div>
+    <div class="ownactions">
+      <button class="btn" id="ownMake">собрать картинку</button>
+      <a class="btn ghost" id="ownDownload">скачать PNG</a>
+    </div>
+    <p class="own-status" id="ownStatus"></p>
+    <canvas id="cv" width="1080" height="1350"></canvas>
+  </section>
 </div>
 <script>
 document.getElementById('share').addEventListener('click', async () => {
