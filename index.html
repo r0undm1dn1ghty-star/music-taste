@@ -31,6 +31,11 @@ h1 em{font-style:normal;color:var(--pink)}
 .ln2{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:rgba(247,241,243,.34);
   text-decoration:none;border-bottom:1px solid transparent;padding-bottom:1px}
 .ln2:hover{color:#ffa3c3;border-bottom-color:rgba(255,111,156,.6)}
+.sh{margin-top:6px;align-self:flex-start;background:transparent;border:1px solid rgba(255,111,156,.45);
+  color:var(--pink-soft);font-family:inherit;font-size:11px;letter-spacing:.1em;text-transform:uppercase;
+  padding:5px 11px;cursor:pointer}
+.sh:hover{background:var(--pink);border-color:var(--pink);color:#12060c}
+.sh.done{border-color:var(--pink);color:var(--pink)}
 .ln{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:rgba(247,241,243,.45);
   text-decoration:none;border-bottom:1px solid transparent;padding-bottom:1px}
 .ln.yt{color:var(--pink-soft)}
@@ -76,7 +81,7 @@ h1 em{font-style:normal;color:var(--pink)}
 <body><div class="wrap">
   <div class="brand"><span>розовый взгляд</span><span>24 / 24</span></div>
   <h1>мой музыкальный вкус<em>.</em></h1>
-  <p class="sub">двадцать четыре позиции, из которых собрано восприятие. под каждой — ссылки: <b>YouTube, Яндекс, VK</b>, а ниже — Spotify, Apple Music, Deezer. спорить можно с любого пункта.</p>
+  <p class="sub">двадцать четыре позиции, из которых собрано восприятие. под каждой — ссылки, чтобы слушать, и кнопка <b>переслать это</b>: список нужен не чтобы слушать, а чтобы отправить тому, у кого этот альбом тоже свой.</p>
   <div class="list">
     <section class="row">
   <img class="cv" src="covers/01.jpg" alt="" loading="lazy">
@@ -85,6 +90,7 @@ h1 em{font-style:normal;color:var(--pink)}
     <span class="a">Nas — Illmatic</span>
     <nav class="lns"><a class="ln yt" href="https://www.youtube.com/watch?v=PNJXsLW4yUQ" target="_blank" rel="noopener">YouTube</a><a class="ln" href="https://music.yandex.ru/search?text=Nas%20Illmatic" target="_blank" rel="noopener">Яндекс</a><a class="ln" href="https://vk.com/audio?q=Nas%20Illmatic" target="_blank" rel="noopener">VK</a></nav>
     <nav class="lns2"><a class="ln2" href="https://open.spotify.com/album/3kEtdS2pH6hKcMU9Wioob1" target="_blank" rel="noopener">Spotify</a><a class="ln2" href="https://music.apple.com/us/album/illmatic/856131729?uo=4" target="_blank" rel="noopener">Apple</a><a class="ln2" href="https://www.deezer.com/album/7654077" target="_blank" rel="noopener">Deezer</a></nav>
+    <button class="sh" type="button" data-p="любимый альбом" data-a="Nas — Illmatic">переслать это</button>
   </div>
 </section><section class="row">
   <img class="cv" src="covers/02.jpg" alt="" loading="lazy">
@@ -93,6 +99,7 @@ h1 em{font-style:normal;color:var(--pink)}
     <span class="a">Big Baby Tape — Hoodrich Tales</span>
     <nav class="lns"><a class="ln yt" href="https://www.youtube.com/watch?v=buOrY-L9iac" target="_blank" rel="noopener">YouTube</a><a class="ln" href="https://music.yandex.ru/search?text=Big%20Baby%20Tape%20Hoodrich%20Tales" target="_blank" rel="noopener">Яндекс</a><a class="ln" href="https://vk.com/audio?q=Big%20Baby%20Tape%20Hoodrich%20Tales" target="_blank" rel="noopener">VK</a></nav>
     <nav class="lns2"><a class="ln2" href="https://open.spotify.com/album/7kfZhXdFokaSeVFAyW8ILd" target="_blank" rel="noopener">Spotify</a><a class="ln2" href="https://www.deezer.com/album/79238442" target="_blank" rel="noopener">Deezer</a></nav>
+    <button class="sh" type="button" data-p="лучший сюжетный альбом" data-a="Big Baby Tape — Hoodrich Tales">переслать это</button>
   </div>
 </section><section class="row">
   <img class="cv" src="covers/03.jpg" alt="" loading="lazy">
@@ -101,6 +108,7 @@ h1 em{font-style:normal;color:var(--pink)}
     <span class="a">Gerry Mulligan — Night Lights</span>
     <nav class="lns"><a class="ln yt" href="https://www.youtube.com/watch?v=Uz559yOmCcY" target="_blank" rel="noopener">YouTube</a><a class="ln" href="https://music.yandex.ru/search?text=Gerry%20Mulligan%20Night%20Lights" target="_blank" rel="noopener">Яндекс</a><a class="ln" href="https://vk.com/audio?q=Gerry%20Mulligan%20Night%20Lights" target="_blank" rel="noopener">VK</a></nav>
     <nav class="lns2"><a class="ln2" href="https://open.spotify.com/album/1uJ9OJIgmgj4ta8xjq9nEJ" target="_blank" rel="noopener">Spotify</a><a class="ln2" href="https://music.apple.com/us/album/night-lights-expanded-edition/1446912991?uo=4" target="_blank" rel="noopener">Apple</a><a class="ln2" href="https://www.deezer.com/album/13028758" target="_blank" rel="noopener">Deezer</a></nav>
+    <button class="sh" type="button" data-p="любимая обложка" data-a="Gerry Mulligan — Night Lights">переслать это</button>
   </div>
 </section><section class="row">
   <img class="cv" src="covers/04.jpg" alt="" loading="lazy">
@@ -109,6 +117,7 @@ h1 em{font-style:normal;color:var(--pink)}
     <span class="a">She &amp; Him — Volume 3</span>
     <nav class="lns"><a class="ln yt" href="https://www.youtube.com/watch?v=wOS3yG95_5k" target="_blank" rel="noopener">YouTube</a><a class="ln" href="https://music.yandex.ru/search?text=She%20%26%20Him%20Volume%203" target="_blank" rel="noopener">Яндекс</a><a class="ln" href="https://vk.com/audio?q=She%20%26%20Him%20Volume%203" target="_blank" rel="noopener">VK</a></nav>
     <nav class="lns2"><a class="ln2" href="https://open.spotify.com/album/3ZRMIbHUqRCM8f3OVkQJ08" target="_blank" rel="noopener">Spotify</a><a class="ln2" href="https://music.apple.com/us/album/volume-3/1839057484?uo=4" target="_blank" rel="noopener">Apple</a><a class="ln2" href="https://www.deezer.com/album/819485861" target="_blank" rel="noopener">Deezer</a></nav>
+    <button class="sh" type="button" data-p="когда-нибудь послушаю" data-a="She &amp; Him — Volume 3">переслать это</button>
   </div>
 </section><section class="row">
   <img class="cv" src="covers/05.jpg" alt="" loading="lazy">
@@ -117,6 +126,7 @@ h1 em{font-style:normal;color:var(--pink)}
     <span class="a">Увула — я думал у меня получится</span>
     <nav class="lns"><a class="ln yt" href="https://www.youtube.com/watch?v=15uyKcYnyT4" target="_blank" rel="noopener">YouTube</a><a class="ln" href="https://music.yandex.ru/search?text=%D0%A3%D0%B2%D1%83%D0%BB%D0%B0%20%D1%8F%20%D0%B4%D1%83%D0%BC%D0%B0%D0%BB%20%D1%83%20%D0%BC%D0%B5%D0%BD%D1%8F%20%D0%BF%D0%BE%D0%BB%D1%83%D1%87%D0%B8%D1%82%D1%81%D1%8F" target="_blank" rel="noopener">Яндекс</a><a class="ln" href="https://vk.com/audio?q=%D0%A3%D0%B2%D1%83%D0%BB%D0%B0%20%D1%8F%20%D0%B4%D1%83%D0%BC%D0%B0%D0%BB%20%D1%83%20%D0%BC%D0%B5%D0%BD%D1%8F%20%D0%BF%D0%BE%D0%BB%D1%83%D1%87%D0%B8%D1%82%D1%81%D1%8F" target="_blank" rel="noopener">VK</a></nav>
     <nav class="lns2"><a class="ln2" href="https://open.spotify.com/album/5IWi3MsYQsYWNNV6Tllscf" target="_blank" rel="noopener">Spotify</a><a class="ln2" href="https://www.deezer.com/album/617323381" target="_blank" rel="noopener">Deezer</a></nav>
+    <button class="sh" type="button" data-p="произвело личное влияние" data-a="Увула — я думал у меня получится">переслать это</button>
   </div>
 </section><section class="row">
   <img class="cv" src="covers/06.jpg" alt="" loading="lazy">
@@ -125,6 +135,7 @@ h1 em{font-style:normal;color:var(--pink)}
     <span class="a">Coldplay — Parachutes</span>
     <nav class="lns"><a class="ln yt" href="https://www.youtube.com/watch?v=yKNxeF4KMsY" target="_blank" rel="noopener">YouTube</a><a class="ln" href="https://music.yandex.ru/search?text=Coldplay%20Parachutes" target="_blank" rel="noopener">Яндекс</a><a class="ln" href="https://vk.com/audio?q=Coldplay%20Parachutes" target="_blank" rel="noopener">VK</a></nav>
     <nav class="lns2"><a class="ln2" href="https://open.spotify.com/album/6ZG5lRT77aJ3btmArcykra" target="_blank" rel="noopener">Spotify</a><a class="ln2" href="https://music.apple.com/us/album/parachutes/1122782080?uo=4" target="_blank" rel="noopener">Apple</a><a class="ln2" href="https://www.deezer.com/album/301663" target="_blank" rel="noopener">Deezer</a></nav>
+    <button class="sh" type="button" data-p="помогает в трудные дни" data-a="Coldplay — Parachutes">переслать это</button>
   </div>
 </section><section class="row">
   <img class="cv" src="covers/07.jpg" alt="" loading="lazy">
@@ -133,6 +144,7 @@ h1 em{font-style:normal;color:var(--pink)}
     <span class="a">Wham! — Make It Big</span>
     <nav class="lns"><a class="ln yt" href="https://www.youtube.com/watch?v=pEkkSXtR82Y" target="_blank" rel="noopener">YouTube</a><a class="ln" href="https://music.yandex.ru/search?text=Wham%21%20Make%20It%20Big" target="_blank" rel="noopener">Яндекс</a><a class="ln" href="https://vk.com/audio?q=Wham%21%20Make%20It%20Big" target="_blank" rel="noopener">VK</a></nav>
     <nav class="lns2"><a class="ln2" href="https://open.spotify.com/album/02f3y3NTsddjdUMoNiBppI" target="_blank" rel="noopener">Spotify</a><a class="ln2" href="https://music.apple.com/us/album/make-it-big/193084944?uo=4" target="_blank" rel="noopener">Apple</a><a class="ln2" href="https://www.deezer.com/album/1399876" target="_blank" rel="noopener">Deezer</a></nav>
+    <button class="sh" type="button" data-p="нравится мне, никто не любит" data-a="Wham! — Make It Big">переслать это</button>
   </div>
 </section><section class="row">
   <img class="cv" src="covers/08.jpg" alt="" loading="lazy">
@@ -141,6 +153,7 @@ h1 em{font-style:normal;color:var(--pink)}
     <span class="a">Баста</span>
     <nav class="lns"><a class="ln yt" href="https://www.youtube.com/watch?v=cQsr3AbuNkw" target="_blank" rel="noopener">YouTube</a><a class="ln" href="https://music.yandex.ru/search?text=%D0%91%D0%B0%D1%81%D1%82%D0%B0" target="_blank" rel="noopener">Яндекс</a><a class="ln" href="https://vk.com/audio?q=%D0%91%D0%B0%D1%81%D1%82%D0%B0" target="_blank" rel="noopener">VK</a></nav>
     <nav class="lns2"><a class="ln2" href="https://open.spotify.com/artist/7as5DY4Rz9jac9tgoTrj9H" target="_blank" rel="noopener">Spotify</a><a class="ln2" href="https://www.deezer.com/artist/4170146" target="_blank" rel="noopener">Deezer</a></nav>
+    <button class="sh" type="button" data-p="все любят, мне не нравится" data-a="Баста">переслать это</button>
   </div>
 </section><section class="row">
   <img class="cv" src="covers/09.jpg" alt="" loading="lazy">
@@ -149,6 +162,7 @@ h1 em{font-style:normal;color:var(--pink)}
     <span class="a">Pink Floyd — The Dark Side of the Moon</span>
     <nav class="lns"><a class="ln yt" href="https://www.youtube.com/watch?v=ztrYoTn4Sws" target="_blank" rel="noopener">YouTube</a><a class="ln" href="https://music.yandex.ru/search?text=Pink%20Floyd%20The%20Dark%20Side%20of%20the%20Moon" target="_blank" rel="noopener">Яндекс</a><a class="ln" href="https://vk.com/audio?q=Pink%20Floyd%20The%20Dark%20Side%20of%20the%20Moon" target="_blank" rel="noopener">VK</a></nav>
     <nav class="lns2"><a class="ln2" href="https://open.spotify.com/album/4LH4d3cOWNNsVw41Gqt2kv" target="_blank" rel="noopener">Spotify</a><a class="ln2" href="https://www.deezer.com/album/12114240" target="_blank" rel="noopener">Deezer</a></nav>
+    <button class="sh" type="button" data-p="недооценённый альбом" data-a="Pink Floyd — The Dark Side of the Moon">переслать это</button>
   </div>
 </section><section class="row">
   <img class="cv" src="covers/10.jpg" alt="" loading="lazy">
@@ -157,6 +171,7 @@ h1 em{font-style:normal;color:var(--pink)}
     <span class="a">Boulevard Depo — OLD BLOOD</span>
     <nav class="lns"><a class="ln yt" href="https://www.youtube.com/watch?v=iu0JDolBqhw" target="_blank" rel="noopener">YouTube</a><a class="ln" href="https://music.yandex.ru/search?text=Boulevard%20Depo%20OLD%20BLOOD" target="_blank" rel="noopener">Яндекс</a><a class="ln" href="https://vk.com/audio?q=Boulevard%20Depo%20OLD%20BLOOD" target="_blank" rel="noopener">VK</a></nav>
     <nav class="lns2"><a class="ln2" href="https://open.spotify.com/album/2WvoaqjUBmXx46rdCq1Fbr" target="_blank" rel="noopener">Spotify</a><a class="ln2" href="https://www.deezer.com/album/180141802" target="_blank" rel="noopener">Deezer</a></nav>
+    <button class="sh" type="button" data-p="переоценённый альбом" data-a="Boulevard Depo — OLD BLOOD">переслать это</button>
   </div>
 </section><section class="row">
   <img class="cv" src="covers/11.jpg" alt="" loading="lazy">
@@ -165,6 +180,7 @@ h1 em{font-style:normal;color:var(--pink)}
     <span class="a">Demis Roussos</span>
     <nav class="lns"><a class="ln yt" href="https://www.youtube.com/watch?v=WwkryZiowNk" target="_blank" rel="noopener">YouTube</a><a class="ln" href="https://music.yandex.ru/search?text=Demis%20Roussos" target="_blank" rel="noopener">Яндекс</a><a class="ln" href="https://vk.com/audio?q=Demis%20Roussos" target="_blank" rel="noopener">VK</a></nav>
     <nav class="lns2"><a class="ln2" href="https://open.spotify.com/artist/0J9mbwg4BquN4XlHzdMK3X" target="_blank" rel="noopener">Spotify</a><a class="ln2" href="https://music.apple.com/us/artist/demis-roussos/123800?uo=4" target="_blank" rel="noopener">Apple</a><a class="ln2" href="https://www.deezer.com/artist/2420" target="_blank" rel="noopener">Deezer</a></nav>
+    <button class="sh" type="button" data-p="не моё, но…" data-a="Demis Roussos">переслать это</button>
   </div>
 </section><section class="row">
   <img class="cv" src="covers/12.jpg" alt="" loading="lazy">
@@ -173,6 +189,7 @@ h1 em{font-style:normal;color:var(--pink)}
     <span class="a">Metal Fingers — Special Herbs</span>
     <nav class="lns"><a class="ln yt" href="https://www.youtube.com/watch?v=ouB5Dj2mvnU" target="_blank" rel="noopener">YouTube</a><a class="ln" href="https://music.yandex.ru/search?text=MF%20DOOM%20Special%20Herbs" target="_blank" rel="noopener">Яндекс</a><a class="ln" href="https://vk.com/audio?q=MF%20DOOM%20Special%20Herbs" target="_blank" rel="noopener">VK</a></nav>
     <nav class="lns2"><a class="ln2" href="https://open.spotify.com/album/3QiZaIVgSMuznmUNLPMG8t" target="_blank" rel="noopener">Spotify</a><a class="ln2" href="https://music.apple.com/us/album/metal-fingers-presents-special-herbs-the-box-set-vol-0-9/1654808373" target="_blank" rel="noopener">Apple</a><a class="ln2" href="https://www.deezer.com/album/382588867" target="_blank" rel="noopener">Deezer</a></nav>
+    <button class="sh" type="button" data-p="лучшие инструменталы" data-a="Metal Fingers — Special Herbs">переслать это</button>
   </div>
 </section><section class="row">
   <img class="cv" src="covers/13.jpg" alt="" loading="lazy">
@@ -181,6 +198,7 @@ h1 em{font-style:normal;color:var(--pink)}
     <span class="a">Weyes Blood — Titanic Rising</span>
     <nav class="lns"><a class="ln yt" href="https://www.youtube.com/watch?v=ZHGw78IJryE" target="_blank" rel="noopener">YouTube</a><a class="ln" href="https://music.yandex.ru/search?text=Weyes%20Blood%20Titanic%20Rising" target="_blank" rel="noopener">Яндекс</a><a class="ln" href="https://vk.com/audio?q=Weyes%20Blood%20Titanic%20Rising" target="_blank" rel="noopener">VK</a></nav>
     <nav class="lns2"><a class="ln2" href="https://open.spotify.com/album/0Cuqhgy8vm96JEkBY3polk" target="_blank" rel="noopener">Spotify</a><a class="ln2" href="https://music.apple.com/us/album/titanic-rising/1450550344?uo=4" target="_blank" rel="noopener">Apple</a><a class="ln2" href="https://www.deezer.com/album/185277222" target="_blank" rel="noopener">Deezer</a></nav>
+    <button class="sh" type="button" data-p="лучший вокал" data-a="Weyes Blood — Titanic Rising">переслать это</button>
   </div>
 </section><section class="row">
   <img class="cv" src="covers/14.jpg" alt="" loading="lazy">
@@ -189,6 +207,7 @@ h1 em{font-style:normal;color:var(--pink)}
     <span class="a">Beach Boys — Pet Sounds</span>
     <nav class="lns"><a class="ln yt" href="https://www.youtube.com/watch?v=M0lj3WX_5ps" target="_blank" rel="noopener">YouTube</a><a class="ln" href="https://music.yandex.ru/search?text=The%20Beach%20Boys%20Pet%20Sounds" target="_blank" rel="noopener">Яндекс</a><a class="ln" href="https://vk.com/audio?q=The%20Beach%20Boys%20Pet%20Sounds" target="_blank" rel="noopener">VK</a></nav>
     <nav class="lns2"><a class="ln2" href="https://open.spotify.com/album/2CNEkSE8TADXRT2AzcEt1b" target="_blank" rel="noopener">Spotify</a><a class="ln2" href="https://music.apple.com/us/album/pet-sounds/1440841241?uo=4" target="_blank" rel="noopener">Apple</a><a class="ln2" href="https://www.deezer.com/album/436186197" target="_blank" rel="noopener">Deezer</a></nav>
+    <button class="sh" type="button" data-p="простой, но классный" data-a="Beach Boys — Pet Sounds">переслать это</button>
   </div>
 </section><section class="row">
   <img class="cv" src="covers/15.jpg" alt="" loading="lazy">
@@ -197,6 +216,7 @@ h1 em{font-style:normal;color:var(--pink)}
     <span class="a">Lil Uzi Vert — LUV vs. The World</span>
     <nav class="lns"><a class="ln yt" href="https://www.youtube.com/watch?v=UXM8bEXkP9o" target="_blank" rel="noopener">YouTube</a><a class="ln" href="https://music.yandex.ru/search?text=Lil%20Uzi%20Vert%20Lil%20Uzi%20Vert%20vs%20The%20World" target="_blank" rel="noopener">Яндекс</a><a class="ln" href="https://vk.com/audio?q=Lil%20Uzi%20Vert%20Lil%20Uzi%20Vert%20vs%20The%20World" target="_blank" rel="noopener">VK</a></nav>
     <nav class="lns2"><a class="ln2" href="https://open.spotify.com/album/7mgdTKTCdfnLoa1HXHvLYM" target="_blank" rel="noopener">Spotify</a><a class="ln2" href="https://www.deezer.com/album/13203512" target="_blank" rel="noopener">Deezer</a></nav>
+    <button class="sh" type="button" data-p="лучший микстэйп" data-a="Lil Uzi Vert — LUV vs. The World">переслать это</button>
   </div>
 </section><section class="row">
   <img class="cv" src="covers/16.jpg" alt="" loading="lazy">
@@ -205,6 +225,7 @@ h1 em{font-style:normal;color:var(--pink)}
     <span class="a">Виктор Цой — неизданное</span>
     <nav class="lns"><a class="ln yt" href="https://www.youtube.com/watch?v=2GXxdR5QFek" target="_blank" rel="noopener">YouTube</a><a class="ln" href="https://music.yandex.ru/search?text=%D0%9A%D0%B8%D0%BD%D0%BE%20%D0%9D%D0%B5%D0%B8%D0%B7%D0%B2%D0%B5%D1%81%D1%82%D0%BD%D1%8B%D0%B5%20%D0%BF%D0%B5%D1%81%D0%BD%D0%B8" target="_blank" rel="noopener">Яндекс</a><a class="ln" href="https://vk.com/audio?q=%D0%9A%D0%B8%D0%BD%D0%BE%20%D0%9D%D0%B5%D0%B8%D0%B7%D0%B2%D0%B5%D1%81%D1%82%D0%BD%D1%8B%D0%B5%20%D0%BF%D0%B5%D1%81%D0%BD%D0%B8" target="_blank" rel="noopener">VK</a></nav>
     <nav class="lns2"><a class="ln2" href="https://open.spotify.com/artist/2jkl2xJVm71azWAgZKyf42" target="_blank" rel="noopener">Spotify</a></nav>
+    <button class="sh" type="button" data-p="любимое неизданное" data-a="Виктор Цой — неизданное">переслать это</button>
   </div>
 </section><section class="row">
   <img class="cv" src="covers/17.jpg" alt="" loading="lazy">
@@ -213,6 +234,7 @@ h1 em{font-style:normal;color:var(--pink)}
     <span class="a">Big Baby Tape — Dragonborn</span>
     <nav class="lns"><a class="ln yt" href="https://www.youtube.com/watch?v=glR9OH88mCs" target="_blank" rel="noopener">YouTube</a><a class="ln" href="https://music.yandex.ru/search?text=Big%20Baby%20Tape%20Dragonborn" target="_blank" rel="noopener">Яндекс</a><a class="ln" href="https://vk.com/audio?q=Big%20Baby%20Tape%20Dragonborn" target="_blank" rel="noopener">VK</a></nav>
     <nav class="lns2"><a class="ln2" href="https://open.spotify.com/album/2wfJ0bReVxM4Qpy7nYoLTd" target="_blank" rel="noopener">Spotify</a><a class="ln2" href="https://www.deezer.com/album/78643812" target="_blank" rel="noopener">Deezer</a></nav>
+    <button class="sh" type="button" data-p="большое разочарование" data-a="Big Baby Tape — Dragonborn">переслать это</button>
   </div>
 </section><section class="row">
   <img class="cv" src="covers/18.jpg" alt="" loading="lazy">
@@ -221,6 +243,7 @@ h1 em{font-style:normal;color:var(--pink)}
     <span class="a">Everything But The Girl — Night and Day</span>
     <nav class="lns"><a class="ln yt" href="https://www.youtube.com/watch?v=Dix30pDGAV8" target="_blank" rel="noopener">YouTube</a><a class="ln" href="https://music.yandex.ru/search?text=Everything%20But%20The%20Girl%20Night%20and%20Day" target="_blank" rel="noopener">Яндекс</a><a class="ln" href="https://vk.com/audio?q=Everything%20But%20The%20Girl%20Night%20and%20Day" target="_blank" rel="noopener">VK</a></nav>
     <nav class="lns2"><a class="ln2" href="https://open.spotify.com/album/0fcIVkoXdoMADxdq7Rbh1r" target="_blank" rel="noopener">Spotify</a><a class="ln2" href="https://music.apple.com/us/album/night-and-day-single/1491837258?uo=4" target="_blank" rel="noopener">Apple</a><a class="ln2" href="https://www.deezer.com/album/123377322" target="_blank" rel="noopener">Deezer</a></nav>
+    <button class="sh" type="button" data-p="большой сюрприз" data-a="Everything But The Girl — Night and Day">переслать это</button>
   </div>
 </section><section class="row">
   <img class="cv" src="covers/19.jpg" alt="" loading="lazy">
@@ -229,6 +252,7 @@ h1 em{font-style:normal;color:var(--pink)}
     <span class="a">Miles Davis — Générique</span>
     <nav class="lns"><a class="ln yt" href="https://www.youtube.com/watch?v=Wc4tT-55ZzI" target="_blank" rel="noopener">YouTube</a><a class="ln" href="https://music.yandex.ru/search?text=Miles%20Davis%20Ascenseur%20pour%20l%27echafaud" target="_blank" rel="noopener">Яндекс</a><a class="ln" href="https://vk.com/audio?q=Miles%20Davis%20Ascenseur%20pour%20l%27echafaud" target="_blank" rel="noopener">VK</a></nav>
     <nav class="lns2"><a class="ln2" href="https://open.spotify.com/album/0aoOdlpGLfNCUFhQu7UIs2" target="_blank" rel="noopener">Spotify</a><a class="ln2" href="https://music.apple.com/us/album/ascenseur-pour-l%C3%A9chafaud/1389716930?uo=4" target="_blank" rel="noopener">Apple</a><a class="ln2" href="https://www.deezer.com/album/268175532" target="_blank" rel="noopener">Deezer</a></nav>
+    <button class="sh" type="button" data-p="лучший саундтрек" data-a="Miles Davis — Générique">переслать это</button>
   </div>
 </section><section class="row">
   <img class="cv" src="covers/20.jpg" alt="" loading="lazy">
@@ -237,6 +261,7 @@ h1 em{font-style:normal;color:var(--pink)}
     <span class="a">Jimi Hendrix — Axis: Bold as Love</span>
     <nav class="lns"><a class="ln yt" href="https://www.youtube.com/watch?v=srqmp2nHNls" target="_blank" rel="noopener">YouTube</a><a class="ln" href="https://music.yandex.ru/search?text=The%20Jimi%20Hendrix%20Experience%20Axis%20Bold%20as%20Love" target="_blank" rel="noopener">Яндекс</a><a class="ln" href="https://vk.com/audio?q=The%20Jimi%20Hendrix%20Experience%20Axis%20Bold%20as%20Love" target="_blank" rel="noopener">VK</a></nav>
     <nav class="lns2"><a class="ln2" href="https://open.spotify.com/album/3uFZf8rykoHo7XMIQVYW6r" target="_blank" rel="noopener">Spotify</a><a class="ln2" href="https://music.apple.com/us/album/axis-bold-as-love/357222341" target="_blank" rel="noopener">Apple</a></nav>
+    <button class="sh" type="button" data-p="самый необычный альбом" data-a="Jimi Hendrix — Axis: Bold as Love">переслать это</button>
   </div>
 </section><section class="row">
   <img class="cv" src="covers/21.jpg" alt="" loading="lazy">
@@ -245,6 +270,7 @@ h1 em{font-style:normal;color:var(--pink)}
     <span class="a">Khruangbin</span>
     <nav class="lns"><a class="ln yt" href="https://www.youtube.com/watch?v=51aa2rlmaAE" target="_blank" rel="noopener">YouTube</a><a class="ln" href="https://music.yandex.ru/search?text=Khruangbin" target="_blank" rel="noopener">Яндекс</a><a class="ln" href="https://vk.com/audio?q=Khruangbin" target="_blank" rel="noopener">VK</a></nav>
     <nav class="lns2"><a class="ln2" href="https://open.spotify.com/artist/2mVVjNmdjXZZDvhgQWiakk" target="_blank" rel="noopener">Spotify</a><a class="ln2" href="https://music.apple.com/us/artist/khruangbin/478520598?uo=4" target="_blank" rel="noopener">Apple</a><a class="ln2" href="https://www.deezer.com/artist/5328540" target="_blank" rel="noopener">Deezer</a></nav>
+    <button class="sh" type="button" data-p="любимая группа" data-a="Khruangbin">переслать это</button>
   </div>
 </section><section class="row">
   <img class="cv" src="covers/22.jpg" alt="" loading="lazy">
@@ -253,6 +279,7 @@ h1 em{font-style:normal;color:var(--pink)}
     <span class="a">FRIENDLY THUG 52 NGG</span>
     <nav class="lns"><a class="ln yt" href="https://www.youtube.com/watch?v=nDnILkAZwYU" target="_blank" rel="noopener">YouTube</a><a class="ln" href="https://music.yandex.ru/search?text=FRIENDLY%20THUG%2052%20NGG" target="_blank" rel="noopener">Яндекс</a><a class="ln" href="https://vk.com/audio?q=FRIENDLY%20THUG%2052%20NGG" target="_blank" rel="noopener">VK</a></nav>
     <nav class="lns2"><a class="ln2" href="https://open.spotify.com/artist/5xtbUYHaOycg6HIi10EZdV" target="_blank" rel="noopener">Spotify</a><a class="ln2" href="https://music.apple.com/us/artist/friendly-thug-52-ngg/1580171427?uo=4" target="_blank" rel="noopener">Apple</a><a class="ln2" href="https://www.deezer.com/artist/140431282" target="_blank" rel="noopener">Deezer</a></nav>
+    <button class="sh" type="button" data-p="любимый артист" data-a="FRIENDLY THUG 52 NGG">переслать это</button>
   </div>
 </section><section class="row">
   <img class="cv" src="covers/23.jpg" alt="" loading="lazy">
@@ -261,6 +288,7 @@ h1 em{font-style:normal;color:var(--pink)}
     <span class="a">Cigarettes After Sex — I.</span>
     <nav class="lns"><a class="ln yt" href="https://www.youtube.com/watch?v=UMlxZx-HH7k" target="_blank" rel="noopener">YouTube</a><a class="ln" href="https://music.yandex.ru/search?text=Cigarettes%20After%20Sex%20I." target="_blank" rel="noopener">Яндекс</a><a class="ln" href="https://vk.com/audio?q=Cigarettes%20After%20Sex%20I." target="_blank" rel="noopener">VK</a></nav>
     <nav class="lns2"><a class="ln2" href="https://open.spotify.com/album/7Li2N39grodaHIg2QU7MSk" target="_blank" rel="noopener">Spotify</a><a class="ln2" href="https://music.apple.com/us/album/i-ep/1266067531?uo=4" target="_blank" rel="noopener">Apple</a><a class="ln2" href="https://www.deezer.com/album/45563201" target="_blank" rel="noopener">Deezer</a></nav>
+    <button class="sh" type="button" data-p="лучший ЕР" data-a="Cigarettes After Sex — I.">переслать это</button>
   </div>
 </section><section class="row">
   <img class="cv" src="covers/24.jpg" alt="" loading="lazy">
@@ -269,6 +297,7 @@ h1 em{font-style:normal;color:var(--pink)}
     <span class="a">Mazzy Star — Among My Swan</span>
     <nav class="lns"><a class="ln yt" href="https://www.youtube.com/watch?v=ewABojPWmY0" target="_blank" rel="noopener">YouTube</a><a class="ln" href="https://music.yandex.ru/search?text=Mazzy%20Star%20Among%20My%20Swan" target="_blank" rel="noopener">Яндекс</a><a class="ln" href="https://vk.com/audio?q=Mazzy%20Star%20Among%20My%20Swan" target="_blank" rel="noopener">VK</a></nav>
     <nav class="lns2"><a class="ln2" href="https://open.spotify.com/album/4mhpbf7jYc0L1nBceoebIE" target="_blank" rel="noopener">Spotify</a><a class="ln2" href="https://music.apple.com/us/album/among-my-swan/724609718?uo=4" target="_blank" rel="noopener">Apple</a><a class="ln2" href="https://www.deezer.com/album/301802" target="_blank" rel="noopener">Deezer</a></nav>
+    <button class="sh" type="button" data-p="самый депрессивный альбом" data-a="Mazzy Star — Among My Swan">переслать это</button>
   </div>
 </section>
   </div>
@@ -278,23 +307,12 @@ h1 em{font-style:normal;color:var(--pink)}
     <p class="cta-lead">это мой вкус. собери свой из этих же двадцати четырёх пунктов — прямо здесь, за пару минут.</p>
     <div class="cta-row">
       <a class="btn" href="https://t.me/p1nks1ght" target="_blank" rel="noopener">розовый взгляд — канал</a>
-      <button class="btn ghost" id="share">поделиться</button>
+      <button class="btn ghost" id="shareAll">переслать весь список</button>
     </div>
-    <p class="cta-note">ниже — тот же список пустым. заполни и забери свою картинку.</p>
+    <p class="cta-note">список работает только когда уезжает. начни с той позиции, о которой вы с кем-то спорили.</p>
   </div>
 
-  <section class="own" id="own">
-    <h2 class="own-h">совпало?</h2>
-    <p class="own-sub">отметь то, что из этого списка — и твоё тоже. ноль печатания, двадцать четыре тычка максимум. потом заберёшь карточку с числом и пойдёшь спорить.</p>
-    <div class="pickgrid" id="pickGrid"></div>
-    <p class="pickcount" id="pickCount">пока ничего не отмечено</p>
-    <div class="ownactions">
-      <button class="btn" id="pickMake">забрать карточку</button>
-      <a class="btn ghost" id="ownDownload">скачать PNG</a>
-    </div>
-    <p class="own-status" id="ownStatus"></p>
-    <canvas id="cv" width="1080" height="1920"></canvas>
-  </section>
+
 </div>
 <script>
 document.getElementById('share').addEventListener('click', async () => {
@@ -305,164 +323,30 @@ document.getElementById('share').addEventListener('click', async () => {
 </script>
 <script>
 (function () {
-  var ITEMS = [
-    ["01-nas.jpg", "любимый альбом", "Nas — Illmatic"],
-    ["02-hoodrich.jpg", "лучший сюжетный", "Big Baby Tape — Hoodrich Tales"],
-    ["03-nightlights.jpg", "любимая обложка", "Gerry Mulligan — Night Lights"],
-    ["04-volume3.jpg", "когда-нибудь послушаю", "She & Him — Volume 3"],
-    ["05-uvula.jpg", "личное влияние", "Увула — я думал у меня получится"],
-    ["06-parachutes.jpg", "трудные дни", "Coldplay — Parachutes"],
-    ["07-makeitbig.jpg", "нравится мне, никто не любит", "Wham! — Make It Big"],
-    ["08-basta.jpg", "все любят, мне не нравится", "Баста"],
-    ["09-dsotm.jpg", "недооценённый", "Pink Floyd — Dark Side of the Moon"],
-    ["10-oldblood.jpg", "переоценённый", "Boulevard Depo — OLD BLOOD"],
-    ["11-roussos.jpg", "не моё, но…", "Demis Roussos"],
-    ["12-specialherbs.jpg", "инструменталы", "Metal Fingers — Special Herbs"],
-    ["13-titanic.jpg", "лучший вокал", "Weyes Blood — Titanic Rising"],
-    ["14-petsounds.jpg", "простой и классный", "Beach Boys — Pet Sounds"],
-    ["15-luvvtw.jpg", "микстэйп", "Lil Uzi Vert — LUV vs. The World"],
-    ["16-tsoi.jpg", "неизданное", "Виктор Цой — неизданное"],
-    ["17-dragonborn.jpg", "разочарование", "Big Baby Tape — Dragonborn"],
-    ["18-nightandday.jpg", "сюрприз", "Everything But The Girl — Night and Day"],
-    ["19-generique.jpg", "саундтрек", "Miles Davis — Générique"],
-    ["20-axis.jpg", "необычный", "Jimi Hendrix — Axis: Bold as Love"],
-    ["21-khruangbin.jpg", "любимая группа", "Khruangbin"],
-    ["22-ft52.jpg", "любимый артист", "FRIENDLY THUG 52 NGG"],
-    ["23-casep.jpg", "лучший ЕР", "Cigarettes After Sex — I."],
-    ["24-mazzystar.jpg", "депрессивный", "Mazzy Star — Among My Swan"]
-  ];
-
-  var picked = {};
-  try { picked = JSON.parse(localStorage.getItem("rv_picked") || "{}"); } catch (e) {}
-
-  var box = document.getElementById("pickGrid");
-  var countEl = document.getElementById("pickCount");
-
-  function count() {
-    return ITEMS.reduce(function (n, _, i) { return n + (picked[i] ? 1 : 0); }, 0);
+  var PAGE = "https://r0undm1dn1ghty-star.github.io/music-taste/";
+  function fallback(t) {
+    var u = "https://t.me/share/url?url=" + encodeURIComponent(PAGE) + "&text=" + encodeURIComponent(t);
+    window.open(u, "_blank", "noopener");
   }
-  function refresh() {
-    var c = count();
-    countEl.textContent = c === 0 ? "пока ничего не отмечено" : "совпало " + c + " из 24";
-    document.getElementById("pickMake").classList.toggle("ready", c > 0);
+  async function send(t, title) {
+    if (navigator.share) {
+      try { await navigator.share({ title: title, text: t, url: PAGE }); return; }
+      catch (e) { if (e && e.name === "AbortError") return; }
+    }
+    fallback(t);
   }
-
-  ITEMS.forEach(function (it, i) {
-    var b = document.createElement("button");
-    b.type = "button";
-    b.className = "pick" + (picked[i] ? " on" : "");
-    b.innerHTML = '<img src="covers/' + it[0] + '" alt=""><span class="pl">' + it[1] + '</span>';
+  document.querySelectorAll(".sh").forEach(function (b) {
     b.addEventListener("click", function () {
-      picked[i] = !picked[i];
-      b.classList.toggle("on", !!picked[i]);
-      try { localStorage.setItem("rv_picked", JSON.stringify(picked)); } catch (e) {}
-      refresh();
+      var p = b.dataset.p, a = b.dataset.a;
+      send(p + " — " + a + "\n\nмой список целиком: " + PAGE, "мой музыкальный вкус");
+      b.classList.add("done");
+      b.textContent = "открылось окно пересылки";
     });
-    box.appendChild(b);
   });
-  refresh();
-
-  var cv = document.getElementById("cv");
-  var ctx = cv.getContext("2d");
-  var W = 1080, H = 1920;
-  cv.width = W; cv.height = H;
-
-  var bgImg = new Image(); bgImg.src = "covers/bg.jpg";
-  var covs = ITEMS.map(function (it) { var im = new Image(); im.src = "covers/" + it[0]; return im; });
-
-  function ready(im) { return im.complete && im.naturalWidth > 0; }
-
-  function draw() {
-    ctx.clearRect(0, 0, W, H);
-    ctx.fillStyle = "#0b0716"; ctx.fillRect(0, 0, W, H);
-    if (ready(bgImg)) {
-      var s = Math.max(W / bgImg.width, H / bgImg.height);
-      ctx.globalAlpha = 0.5;
-      ctx.drawImage(bgImg, (W - bgImg.width * s) / 2, (H - bgImg.height * s) / 2, bgImg.width * s, bgImg.height * s);
-      ctx.globalAlpha = 1;
-    }
-    var g = ctx.createLinearGradient(0, 0, 0, H);
-    g.addColorStop(0, "rgba(8,5,16,.90)");
-    g.addColorStop(.42, "rgba(8,5,16,.62)");
-    g.addColorStop(1, "rgba(8,5,16,.96)");
-    ctx.fillStyle = g; ctx.fillRect(0, 0, W, H);
-
-    var c = count();
-
-    ctx.fillStyle = "#ffa3c3";
-    ctx.font = "600 22px Onest, system-ui, sans-serif";
-    ctx.fillText("РОЗОВЫЙ ВЗГЛЯД", 48, 78);
-    ctx.fillStyle = "rgba(247,241,243,.45)";
-    ctx.font = "400 20px Onest, system-ui, sans-serif";
-    ctx.textAlign = "right";
-    ctx.fillText("24 / 24", W - 48, 78);
-    ctx.textAlign = "left";
-
-    ctx.fillStyle = "#f7f1f3";
-    ctx.font = "700 34px Onest, system-ui, sans-serif";
-    ctx.fillText("мой вкус совпал с твоим", 48, 150);
-
-    ctx.font = "800 150px Unbounded, Onest, system-ui, sans-serif";
-    ctx.fillStyle = "#ff6f9c";
-    ctx.fillText(String(c), 44, 300);
-    var numW = ctx.measureText(String(c)).width;
-    ctx.font = "700 56px Onest, system-ui, sans-serif";
-    ctx.fillStyle = "rgba(247,241,243,.75)";
-    ctx.fillText("/ 24", 44 + numW + 18, 300);
-
-    ctx.font = "400 22px Onest, system-ui, sans-serif";
-    ctx.fillStyle = "rgba(247,241,243,.5)";
-    var line = c === 0 ? "ни одного совпадения — и это уже разговор"
-      : c <= 3 ? "почти ничего общего. интересно, как ты вообще сюда попал"
-      : c <= 9 ? "столько позиций из моего списка — и твои тоже"
-      : c <= 17 ? "многовато для случайности"
-      : "мы слушаем одно и то же. соболезную";
-    ctx.fillText(line, 48, 344);
-
-    var cell = 200, gap = 12, x0 = 122, y0 = 392;
-    ITEMS.forEach(function (it, i) {
-      var col = i % 4, row = Math.floor(i / 4);
-      var x = x0 + col * (cell + gap), y = y0 + row * (cell + gap);
-      ctx.save();
-      if (!picked[i]) ctx.globalAlpha = 0.22;
-      if (ready(covs[i])) ctx.drawImage(covs[i], x, y, cell, cell);
-      else { ctx.fillStyle = "#1a1030"; ctx.fillRect(x, y, cell, cell); }
-      ctx.restore();
-      if (picked[i]) {
-        ctx.strokeStyle = "#ff6f9c"; ctx.lineWidth = 5;
-        ctx.strokeRect(x + 2.5, y + 2.5, cell - 5, cell - 5);
-      }
-    });
-
-    ctx.fillStyle = "#ffa3c3";
-    ctx.font = "600 20px Onest, system-ui, sans-serif";
-    ctx.fillText("отметь свои — и забери карточку", 48, 1772);
-    ctx.fillStyle = "rgba(247,241,243,.42)";
-    ctx.font = "400 18px Onest, system-ui, sans-serif";
-    ctx.fillText("r0undm1dn1ghty-star.github.io/music-taste", 48, 1806);
-    ctx.fillStyle = "rgba(247,241,243,.28)";
-    ctx.font = "400 17px Onest, system-ui, sans-serif";
-    ctx.fillText("список целиком, со ссылками на все сервисы — по адресу выше", 48, 1840);
-  }
-
-  var st = document.getElementById("ownStatus");
-  var dl = document.getElementById("ownDownload");
-
-  document.getElementById("pickMake").addEventListener("click", async function () {
-    if (document.fonts && document.fonts.ready) { try { await document.fonts.ready; } catch (e) {} }
-    draw();
-    cv.classList.add("shown");
-    try {
-      dl.href = cv.toDataURL("image/png");
-      dl.classList.add("shown");
-      dl.setAttribute("download", "вкус-совпал.png");
-      st.textContent = "карточка готова — сохраняй или шарь";
-    } catch (e) {
-      st.textContent = "в этом браузере картинку не собрать";
-    }
+  var all = document.getElementById("shareAll");
+  if (all) all.addEventListener("click", function () {
+    send("двадцать четыре позиции, из которых собран мой вкус.\n\n" + PAGE, "мой музыкальный вкус");
   });
-
-  draw();
 })();
 
 </script>
