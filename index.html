@@ -412,7 +412,12 @@ document.getElementById('share').addEventListener('click', async () => {
 
     ctx.font = "400 22px Onest, system-ui, sans-serif";
     ctx.fillStyle = "rgba(247,241,243,.5)";
-    ctx.fillText(c === 0 ? "ничего не отмечено" : "столько позиций из моего списка — и твои тоже", 48, 344);
+    var line = c === 0 ? "ни одного совпадения — и это уже разговор"
+      : c <= 3 ? "почти ничего общего. интересно, как ты вообще сюда попал"
+      : c <= 9 ? "столько позиций из моего списка — и твои тоже"
+      : c <= 17 ? "многовато для случайности"
+      : "мы слушаем одно и то же. соболезную";
+    ctx.fillText(line, 48, 344);
 
     var cell = 200, gap = 12, x0 = 122, y0 = 392;
     ITEMS.forEach(function (it, i) {
