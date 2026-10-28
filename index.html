@@ -20,7 +20,8 @@ h1{font-family:"Unbounded";font-weight:800;font-size:clamp(30px,7.2vw,44px);line
 h1 em{font-style:normal;color:var(--pink)}
 .sub{margin-top:14px;font-size:15.5px;line-height:1.5;color:var(--mut);max-width:34em}
 .sub b{color:var(--pink-soft);font-weight:600}
-.list{margin-top:40px;display:flex;flex-direction:column;gap:22px}
+.topacts{display:flex;gap:10px;margin-top:26px;flex-wrap:wrap}
+.list{margin-top:34px;display:flex;flex-direction:column;gap:22px}
 .row{display:flex;gap:16px;align-items:flex-start}
 .cv{width:88px;height:88px;flex:0 0 88px;object-fit:cover;background:#151011;outline:1px solid rgba(255,255,255,.07)}
 .tx{display:flex;flex-direction:column;gap:5px;padding-top:2px}
@@ -31,11 +32,11 @@ h1 em{font-style:normal;color:var(--pink)}
 .ln2{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:rgba(247,241,243,.34);
   text-decoration:none;border-bottom:1px solid transparent;padding-bottom:1px}
 .ln2:hover{color:#ffa3c3;border-bottom-color:rgba(255,111,156,.6)}
-.sh{margin-top:6px;align-self:flex-start;background:transparent;border:1px solid rgba(255,111,156,.45);
-  color:var(--pink-soft);font-family:inherit;font-size:11px;letter-spacing:.1em;text-transform:uppercase;
-  padding:5px 11px;cursor:pointer}
-.sh:hover{background:var(--pink);border-color:var(--pink);color:#12060c}
-.sh.done{border-color:var(--pink);color:var(--pink)}
+.sh{margin-top:2px;align-self:flex-start;background:transparent;border:0;padding:2px 0;
+  color:rgba(255,163,195,.75);font-family:inherit;font-size:11.5px;letter-spacing:.09em;text-transform:uppercase;
+  cursor:pointer;border-bottom:1px solid rgba(255,111,156,.35)}
+.sh:hover{color:var(--pink);border-bottom-color:var(--pink)}
+.sh.done{color:var(--pink);border-bottom-color:var(--pink)}
 .ln{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:rgba(247,241,243,.45);
   text-decoration:none;border-bottom:1px solid transparent;padding-bottom:1px}
 .ln.yt{color:var(--pink-soft)}
@@ -85,6 +86,12 @@ h1 em{font-style:normal;color:var(--pink)}
   <div class="brand"><span>розовый взгляд</span><span>24 / 24</span></div>
   <h1>мой музыкальный вкус<em>.</em></h1>
   <p class="sub">двадцать четыре позиции, из которых собрано восприятие. под каждой — ссылки, чтобы слушать, и кнопка <b>переслать это</b>: список нужен не чтобы слушать, а чтобы отправить тому, у кого этот альбом тоже свой.</p>
+  <div class="topacts">
+    <button class="btn" id="shareAllTop">переслать список</button>
+    <button class="btn ghost" id="shareBlankTop">пустой список другу</button>
+    <a class="btn ghost" href="how.html">как это собрано</a>
+  </div>
+
   <div class="list">
     <section class="row">
   <img class="cv" src="covers/01.jpg" alt="" loading="lazy">
@@ -358,7 +365,7 @@ document.getElementById('share').addEventListener('click', async () => {
     b.addEventListener("click", function () {
       send(b.dataset.p + " — " + b.dataset.a + "\n\nмой список целиком: " + PAGE, "мой музыкальный вкус");
       b.classList.add("done");
-      b.textContent = "окно пересылки открылось";
+      b.textContent = "открылось окно пересылки";
     });
   });
 
