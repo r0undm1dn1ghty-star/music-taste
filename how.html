@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="ru"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>как собран этот сайт — промпт</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@600;800&family=Onest:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0b0809;--ink:#f7f1f3;--pink:#ff6f9c;--pink-soft:#ffa3c3;--mut:rgba(247,241,243,.55)}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:"Onest",system-ui,sans-serif;-webkit-font-smoothing:antialiased;position:relative}
+body::before{content:"";position:fixed;inset:0;z-index:-2;background:url("covers/bg.jpg") center 30%/cover no-repeat;filter:brightness(.5) saturate(1.05)}
+body::after{content:"";position:fixed;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(7,4,12,.9) 0%,rgba(7,4,12,.7) 45%,rgba(7,4,12,.95) 100%)}
+.wrap{max-width:760px;margin:0 auto;padding:56px 20px 80px}
+.brand{display:flex;justify-content:space-between;font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--pink-soft);font-weight:600}
+.brand a{color:var(--mut);text-decoration:none}
+h1{font-family:"Unbounded";font-weight:800;font-size:clamp(28px,6.6vw,42px);line-height:1.02;letter-spacing:-.03em;margin-top:18px}
+h1 em{font-style:normal;color:var(--pink)}
+.lead{margin-top:16px;font-size:16.5px;line-height:1.5;color:rgba(247,241,243,.8)}
+.steps{margin-top:34px;display:flex;flex-direction:column;gap:18px}
+.step{display:flex;gap:14px;align-items:flex-start}
+.num{font-family:"Unbounded";font-weight:800;font-size:20px;color:var(--pink);flex:0 0 34px;line-height:1.3}
+.step p{font-size:15.5px;line-height:1.5;color:rgba(247,241,243,.75)}
+.step b{color:#fff;font-weight:600}
+h2{margin-top:44px;font-family:"Unbounded";font-weight:600;font-size:19px;letter-spacing:-.01em}
+.acts{display:flex;gap:12px;margin-top:16px;flex-wrap:wrap}
+.btn{display:inline-block;padding:11px 20px;font-size:12.5px;letter-spacing:.1em;text-transform:uppercase;font-weight:600;
+  text-decoration:none;color:#12060c;background:var(--pink);border:1px solid var(--pink);cursor:pointer;font-family:inherit}
+.btn.ghost{background:transparent;color:var(--pink-soft)}
+.btn:hover{background:var(--pink-soft);border-color:var(--pink-soft);color:#12060c}
+pre{margin-top:18px;padding:20px;background:rgba(10,6,20,.72);border-left:3px solid rgba(255,111,156,.6);
+  font-family:ui-monospace,Consolas,monospace;font-size:12.5px;line-height:1.55;color:rgba(247,241,243,.86);
+  white-space:pre-wrap;word-break:break-word;max-height:60vh;overflow:auto}
+.note{margin-top:16px;font-size:13.5px;line-height:1.5;color:var(--mut)}
+.foot{margin-top:48px;border-top:1px solid rgba(255,111,156,.3);padding-top:16px;font-size:13.5px;color:var(--mut)}
+.foot a{color:var(--pink-soft);text-decoration:none}
+</style></head><body><div class="wrap">
+  <div class="brand"><span>розовый взгляд</span><a href="./">← к списку</a></div>
+  <h1>этот сайт собран<br>с одного промпта<em>.</em></h1>
+  <p class="lead">никакого кода руками, никакой оплаты, никакого дизайнера. один промпт в Claude, двадцать четыре своих альбома и GitHub Pages — который бесплатный.</p>
+
+  <div class="steps">
+    <div class="step"><span class="num">01</span><p><b>выпиши свои 24 пункта</b> — тот же набор вопросов, только твои ответы. это единственное, что нельзя сгенерировать: вкус.</p></div>
+    <div class="step"><span class="num">02</span><p><b>вставь промпт ниже в Claude</b> вместе со своими ответами. он найдёт обложки, соберёт ссылки, сверстает страницу и картинку.</p></div>
+    <div class="step"><span class="num">03</span><p><b>залей на GitHub Pages</b> — новый публичный репозиторий, файлы, Settings → Pages → ветка main. ссылка появится через минуту.</p></div>
+    <div class="step"><span class="num">04</span><p><b>раздай ссылку.</b> внизу страницы уже стоит кнопка «пустой список другу» — друг заполняет и присылает обратно.</p></div>
+  </div>
+
+  <h2>промпт целиком</h2>
+  <div class="acts">
+    <button class="btn" id="copy">скопировать промпт</button>
+    <a class="btn ghost" href="./">посмотреть результат</a>
+  </div>
+  <pre id="p">Ты — дизайнер-разработчик. Собери мне одностраничный сайт «мой музыкальный вкус»
+и картинку-сетку для соцсетей. Работай до готового результата, а не до плана.
+
+### Данные
+
+24 пункта. Формат: &lt;пункт&gt; — &lt;мой ответ&gt;. Ничего не выдумывай и не заменяй мои
+ответы «похожими»: если не можешь найти обложку или ссылку — честно оставь
+пункт без неё и скажи мне.
+
+1. любимый альбом — Nas, Illmatic
+2. лучший сюжетный альбом — Big Baby Tape, Hoodrich Tales
+3. любимая обложка — Gerry Mulligan, Night Lights
+4. когда-нибудь послушаю — She &amp; Him, Volume 3
+5. произвело личное влияние — Увула, «я думал у меня получится»
+6. помогает в трудные дни — Coldplay, Parachutes
+7. нравится мне, но никто не любит — Wham!, Make It Big
+8. все любят, а мне не нравится — Баста
+9. недооценённый альбом — Pink Floyd, The Dark Side of the Moon
+10. переоценённый альбом — Boulevard Depo, OLD BLOOD
+11. не моё, но… — Demis Roussos
+12. лучшие инструменталы — Metal Fingers (MF DOOM), Special Herbs
+13. лучший вокал — Weyes Blood, «picture me better»
+14. простой, но классный — Beach Boys, Pet Sounds
+15. лучший микстэйп — Lil Uzi Vert, Lil Uzi Vert vs. The World
+16. любимое неизданное — неизвестные песни Виктора Цоя
+17. большое разочарование — Big Baby Tape, Dragonborn
+18. большой сюрприз — Everything But The Girl, «Night and Day»
+19. лучший саундтрек — Miles Davis, «Générique»
+20. самый необычный альбом — Jimi Hendrix, Axis: Bold as Love
+21. любимая группа — Khruangbin
+22. любимый артист — FRIENDLY THUG 52 NGG
+23. лучший ЕР — Cigarettes After Sex, I.
+24. самый депрессивный альбом — Mazzy Star, Among My Swan
+
+### Что сделать
+
+**A. Обложки.** Найди обложку для каждого пункта. Бесплатные источники без ключей:
+- iTunes Search API: `https://itunes.apple.com/search?term=&lt;артист альбом&gt;&amp;entity=album&amp;limit=5&amp;country=us`
+  (в ответе `artworkUrl100` — замени `/100x100bb.jpg` на `/600x600bb.jpg`)
+- Deezer: `https://api.deezer.com/search/album?q=&lt;артист альбом&gt;&amp;limit=5` (поле `cover_big`)
+- Если обложки нет в каталогах (бутлеги, микстэйпы) — возьми из Википедии через
+  `action=query&amp;prop=imageinfo&amp;iiurlwidth=700` или с превью официального видео на YouTube
+  (`https://i.ytimg.com/vi/&lt;id&gt;/maxresdefault.jpg`).
+Скачай все обложки в `covers/NN.jpg` (NN — номер пункта). Квадратные, минимум 500×500.
+
+**B. Ссылки.** Для каждого пункта — на что кликнуть, чтобы послушать:
+- YouTube: найди реальный ролик (полный альбом или официальный трек), а не поисковую
+  выдачу. Проверь, что видео существует.
+- Яндекс.Музыка: `https://music.yandex.ru/search?text=&lt;артист альбом&gt;` — универсальный
+  вариант, работает для любого пункта.
+- VK Music: `https://vk.com/audio?q=&lt;артист альбом&gt;` — универсальный поиск, проверено
+  (редиректит на vk.ru, запрос сохраняется).
+- Spotify: если можешь открыть страницу — вытащи настоящую ссылку на альбом из
+  `https://open.spotify.com/search/&lt;артист альбом&gt;/albums` (ссылки вида `/album/…`,
+  на карточке видно название, год и артиста — сверяй по ним). Если открыть не можешь,
+  ставь поиск `https://open.spotify.com/search/&lt;артист альбом&gt;` и скажи об этом.
+  Не выдумывай ID.
+- Apple Music / Deezer — только если нашёл настоящую страницу релиза. Не подставляй
+  похожий релиз другого артиста: пустая кнопка лучше неверной ссылки.
+- Для пунктов «любимый артист / группа» ссылка на страницу артиста честнее, чем на
+  случайный альбом.
+Никогда не выдумывай ID и URL. Проверяй HTTP-статус каждой ссылки.
+
+**C. Страница `index.html`.** Один файл, без сборки, без фреймворков.
+- Тёмный фон `#0b0809`, акцент `#ff6f9c`, вторичный розовый `#ffa3c3`, текст `#f7f1f3`.
+- Шрифты: Unbounded (заголовки, 800) + Onest (текст) — подключи через Google Fonts.
+- Шапка: «розовый взгляд» слева, «24 / 24» справа, крупный заголовок
+  «мой музыкальный вкус.», подзаголовок в одну-две строки.
+- Список: 24 строки. В каждой — обложка 88×88, мелкая розовая подпись пункта
+  (uppercase, letter-spacing .12em), крупный ответ (17px, 700) и строка ссылок
+  текстовыми ссылками (НЕ пилюлями и НЕ кнопками с заливкой) в два ряда:
+  первый — `YouTube · Яндекс · VK` (крупнее, розовый YouTube),
+  второй — `Spotify · Apple · Deezer` (мельче и приглушённее).
+- Подвал: «ни один пункт не согласован с предыдущим».
+- Мобильный первым: на 360px всё читается, ничего не вылезает по горизонтали.
+- Никакого AI-слопа: без фиолетовых градиентов, скруглённых «пилюль», эмодзи,
+  теней-подушек и «заливных бейджей».
+
+**D. Картинка для соцсетей `grid.png`.** 1080 px шириной.
+- Сетка 4 колонки × 6 строк, ячейка 245×245, обложка во всю ячейку.
+- Внизу каждой ячейки тёмный скрим-градиент и две строки: пункт (розовый, 10px,
+  uppercase) и ответ (белый, 15px, 700, максимум 2 строки).
+- Сверху: «РОЗОВЫЙ ВЗГЛЯД / 24 / 24», заголовок, подзаголовок слева и короткая
+  подколка справа.
+- Внизу справа — QR-код на адрес сайта, в белой рамке. QR должен читаться после
+  сжатия в JPEG качества 70 — проверь декодером, а не на глаз.
+- Рендери в PNG через headless Chrome:
+  `chrome --headless --screenshot=grid.png --window-size=1080,&lt;высота&gt; file:///...`
+  Высоту бери по факту (замерь `document.body.scrollHeight`), иначе низ обрежется
+  молча.
+
+**E. Проверка перед сдачей.** Не отчитывайся «готово», пока не проверил:
+1. Все 24 обложки скачаны, ни одна не битая и не пустая.
+2. Каждая ссылка отвечает 200 (или честно помечена как отсутствующая).
+3. На странице ровно 24 строки, на картинке ровно 24 ячейки.
+4. Ни одна подпись не обрезана (2 строки максимум, без «…»).
+5. Нет горизонтального скролла на 360px.
+6. QR декодируется в нужный адрес.
+
+**F. Выложи на GitHub Pages** (если есть `gh` CLI и доступ к аккаунту):</pre>
+  <p class="note">если Claude не умеет в терминал — в промпте есть второй путь: залить файлы через веб-интерфейс GitHub и включить Pages руками.</p>
+
+  <div class="foot">мой список — <a href="./">r0undm1dn1ghty-star.github.io/music-taste</a></div>
+</div>
+<script>
+document.getElementById('copy').addEventListener('click', async function () {
+  var t = document.getElementById('p').textContent, ok = false;
+  try { await navigator.clipboard.writeText(t); ok = true; } catch (e) {
+    var ta = document.createElement('textarea'); ta.value = t; document.body.appendChild(ta); ta.select();
+    try { document.execCommand('copy'); ok = true; } catch (e2) {}
+    ta.remove();
+  }
+  this.textContent = ok ? 'скопировано' : 'выдели и скопируй вручную';
+});
+</script>
+</body></html>

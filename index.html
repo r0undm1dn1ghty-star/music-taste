@@ -43,6 +43,7 @@ h1 em{font-style:normal;color:var(--pink)}
 .foot{margin-top:52px;border-top:1px solid rgba(255,111,156,.35);padding-top:16px;
   display:flex;justify-content:space-between;gap:16px;font-size:13.5px;color:var(--mut)}
 .foot b{color:var(--pink-soft);font-weight:600}
+.howlink{color:var(--pink-soft);text-decoration:none;border-bottom:1px solid rgba(255,111,156,.5)}
 .cta{margin-top:44px;padding:30px 26px;border:1px solid rgba(255,111,156,.28);background:rgba(255,111,156,.04)}
 .cta-lead{font-size:16.5px;line-height:1.45;color:rgba(247,241,243,.82);max-width:38em}
 .cta-row{display:flex;gap:12px;margin-top:18px;flex-wrap:wrap}
@@ -51,6 +52,8 @@ h1 em{font-style:normal;color:var(--pink)}
 .btn.ghost{background:transparent;color:var(--pink-soft)}
 .btn:hover{background:var(--pink-soft);border-color:var(--pink-soft);color:#12060c}
 .cta-note{margin-top:14px;font-size:13.5px;line-height:1.4;color:var(--mut)}
+.cta-note b{color:var(--pink-soft);font-weight:600}
+.cta-note a{color:var(--pink-soft);text-decoration:underline;text-underline-offset:2px}
 .own{margin-top:56px;padding-top:40px;border-top:1px solid rgba(255,111,156,.22)}
 .own-h{font-family:"Unbounded";font-weight:800;font-size:clamp(26px,6vw,36px);letter-spacing:-.03em}
 .own-sub{margin-top:12px;font-size:15px;line-height:1.5;color:var(--mut);max-width:36em}
@@ -301,7 +304,7 @@ h1 em{font-style:normal;color:var(--pink)}
   </div>
 </section>
   </div>
-  <div class="foot"><span><b>ни один пункт не согласован с предыдущим</b></span><span>слушать подряд — можно с любого места</span></div>
+  <div class="foot"><span><b>ни один пункт не согласован с предыдущим</b></span><span><a class="howlink" href="how.html">собрано с одного промпта →</a></span></div>
 
   <div class="cta">
     <p class="cta-lead">это мой вкус. собери свой из этих же двадцати четырёх пунктов — прямо здесь, за пару минут.</p>
@@ -311,7 +314,7 @@ h1 em{font-style:normal;color:var(--pink)}
       <button class="btn ghost" id="shareBlank">пустой список другу</button>
       <button class="btn ghost" id="copyBlank">скопировать пустой список</button>
     </div>
-    <p class="cta-note">свой список собирается не здесь, а в переписке: жмёшь «пустой список другу» — уходит тот же набор из 24 пунктов без ответов, друг заполняет и присылает обратно. у каждого остаётся свой, и оба сошлются на этот.</p>
+    <p class="cta-note"><b>эта страница собрана с одного промпта</b> — без кода, без денег, на бесплатном GitHub Pages. промпт лежит тут: <a href="how.html">как это сделано</a>. свой список собирается не здесь, а в переписке: жмёшь «пустой список другу» — уходит тот же набор из 24 пунктов без ответов, друг заполняет и присылает обратно. у каждого остаётся свой, и оба сошлются на этот.</p>
   </div>
 
 
