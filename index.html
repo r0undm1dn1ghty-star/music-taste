@@ -34,6 +34,14 @@ h1 em{font-style:normal;color:var(--pink)}
 .foot{margin-top:52px;border-top:1px solid rgba(255,111,156,.35);padding-top:16px;
   display:flex;justify-content:space-between;gap:16px;font-size:13.5px;color:var(--mut)}
 .foot b{color:var(--pink-soft);font-weight:600}
+.cta{margin-top:44px;padding:30px 26px;border:1px solid rgba(255,111,156,.28);background:rgba(255,111,156,.04)}
+.cta-lead{font-size:16.5px;line-height:1.45;color:rgba(247,241,243,.82);max-width:38em}
+.cta-row{display:flex;gap:12px;margin-top:18px;flex-wrap:wrap}
+.btn{display:inline-block;padding:11px 20px;font-size:13px;letter-spacing:.1em;text-transform:uppercase;font-weight:600;
+  text-decoration:none;color:#12060c;background:var(--pink);border:1px solid var(--pink);cursor:pointer;font-family:inherit}
+.btn.ghost{background:transparent;color:var(--pink-soft)}
+.btn:hover{background:var(--pink-soft);border-color:var(--pink-soft);color:#12060c}
+.cta-note{margin-top:14px;font-size:13.5px;line-height:1.4;color:var(--mut)}
 @media (max-width:560px){.cv{width:72px;height:72px;flex-basis:72px}.a{font-size:15.5px}}
 </style></head>
 <body><div class="wrap">
@@ -236,4 +244,21 @@ h1 em{font-style:normal;color:var(--pink)}
 </section>
   </div>
   <div class="foot"><span><b>ни один пункт не согласован с предыдущим</b></span><span>слушать подряд — можно с любого места</span></div>
-</div></body></html>
+
+  <div class="cta">
+    <p class="cta-lead">это мой вкус. собери свой из этих же двадцати четырёх пунктов — и пришли, интересно, где мы расходимся.</p>
+    <div class="cta-row">
+      <a class="btn" href="https://t.me/p1nks1ght" target="_blank" rel="noopener">розовый взгляд — канал</a>
+      <button class="btn ghost" id="share">поделиться</button>
+    </div>
+    <p class="cta-note">пришлёшь список — соберу тебе такую же страницу со ссылками и обложками.</p>
+  </div>
+</div>
+<script>
+document.getElementById('share').addEventListener('click', async () => {
+  const data = {title: 'мой музыкальный вкус — 24 позиции', text: 'список и все ссылки', url: location.href};
+  try { if (navigator.share) { await navigator.share(data); return; } } catch (e) {}
+  try { await navigator.clipboard.writeText(location.href); document.getElementById('share').textContent = 'ссылка скопирована'; } catch (e) {}
+});
+</script>
+</body></html>
