@@ -414,7 +414,7 @@ document.getElementById('share').addEventListener('click', async () => {
     ctx.fillStyle = "rgba(247,241,243,.5)";
     ctx.fillText(c === 0 ? "ничего не отмечено" : "столько позиций из моего списка — и твои тоже", 48, 344);
 
-    var cell = 236, gap = 14, x0 = 48, y0 = 400;
+    var cell = 200, gap = 12, x0 = 122, y0 = 392;
     ITEMS.forEach(function (it, i) {
       var col = i % 4, row = Math.floor(i / 4);
       var x = x0 + col * (cell + gap), y = y0 + row * (cell + gap);
@@ -431,7 +431,7 @@ document.getElementById('share').addEventListener('click', async () => {
 
     ctx.fillStyle = "#ffa3c3";
     ctx.font = "600 20px Onest, system-ui, sans-serif";
-    ctx.fillText("отметь свои — и забери карточку", 48, 1770);
+    ctx.fillText("отметь свои — и забери карточку", 48, 1772);
     ctx.fillStyle = "rgba(247,241,243,.42)";
     ctx.font = "400 18px Onest, system-ui, sans-serif";
     ctx.fillText("r0undm1dn1ghty-star.github.io/music-taste", 48, 1806);
