@@ -308,8 +308,10 @@ h1 em{font-style:normal;color:var(--pink)}
     <div class="cta-row">
       <a class="btn" href="https://t.me/p1nks1ght" target="_blank" rel="noopener">розовый взгляд — канал</a>
       <button class="btn ghost" id="shareAll">переслать весь список</button>
+      <button class="btn ghost" id="shareBlank">пустой список другу</button>
+      <button class="btn ghost" id="copyBlank">скопировать пустой список</button>
     </div>
-    <p class="cta-note">список работает только когда уезжает. начни с той позиции, о которой вы с кем-то спорили.</p>
+    <p class="cta-note">свой список собирается не здесь, а в переписке: жмёшь «пустой список другу» — уходит тот же набор из 24 пунктов без ответов, друг заполняет и присылает обратно. у каждого остаётся свой, и оба сошлются на этот.</p>
   </div>
 
 
@@ -324,6 +326,19 @@ document.getElementById('share').addEventListener('click', async () => {
 <script>
 (function () {
   var PAGE = "https://r0undm1dn1ghty-star.github.io/music-taste/";
+  var PROMPTS = [
+    "любимый альбом", "лучший сюжетный альбом", "любимая обложка", "когда-нибудь послушаю",
+    "произвело личное влияние", "помогает в трудные дни", "нравится мне, никто не любит",
+    "все любят, мне не нравится", "недооценённый альбом", "переоценённый альбом", "не моё, но…",
+    "лучшие инструменталы", "лучший вокал", "простой, но классный", "лучший микстэйп",
+    "любимое неизданное", "большое разочарование", "большой сюрприз", "лучший саундтрек",
+    "самый необычный альбом", "любимая группа", "любимый артист", "лучший ЕР", "самый депрессивный альбом"
+  ];
+
+  var BLANK = "мой музыкальный вкус — те же 24 пункта. заполни и пришли обратно: где разойдёмся, там и разговор.\n\n"
+    + PROMPTS.map(function (p) { return p + " — "; }).join("\n")
+    + "\n\nмой список, для сравнения: " + PAGE;
+
   function fallback(t) {
     var u = "https://t.me/share/url?url=" + encodeURIComponent(PAGE) + "&text=" + encodeURIComponent(t);
     window.open(u, "_blank", "noopener");
@@ -335,17 +350,36 @@ document.getElementById('share').addEventListener('click', async () => {
     }
     fallback(t);
   }
+
   document.querySelectorAll(".sh").forEach(function (b) {
     b.addEventListener("click", function () {
-      var p = b.dataset.p, a = b.dataset.a;
-      send(p + " — " + a + "\n\nмой список целиком: " + PAGE, "мой музыкальный вкус");
+      send(b.dataset.p + " — " + b.dataset.a + "\n\nмой список целиком: " + PAGE, "мой музыкальный вкус");
       b.classList.add("done");
-      b.textContent = "открылось окно пересылки";
+      b.textContent = "окно пересылки открылось";
     });
   });
+
   var all = document.getElementById("shareAll");
   if (all) all.addEventListener("click", function () {
     send("двадцать четыре позиции, из которых собран мой вкус.\n\n" + PAGE, "мой музыкальный вкус");
+  });
+
+  var blank = document.getElementById("shareBlank");
+  if (blank) blank.addEventListener("click", function () {
+    send(BLANK, "24 пункта — заполни и пришли обратно");
+  });
+
+  var copy = document.getElementById("copyBlank");
+  if (copy) copy.addEventListener("click", async function () {
+    var ok = false;
+    try { await navigator.clipboard.writeText(BLANK); ok = true; } catch (e) {
+      var ta = document.createElement("textarea");
+      ta.value = BLANK; document.body.appendChild(ta); ta.select();
+      try { document.execCommand("copy"); ok = true; } catch (e2) {}
+      ta.remove();
+    }
+    copy.textContent = ok ? "скопировано" : "не вышло";
+    setTimeout(function () { copy.textContent = "скопировать пустой список"; }, 2200);
   });
 })();
 
